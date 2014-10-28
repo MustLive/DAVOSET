@@ -1,10 +1,9 @@
 DDoS attacks via other sites execution tool
-DAVOSET v.1.2
+DAVOSET v.1.2.1
 Tool for conducting of DDoS attacks on the sites via other sites
 Copyright (C) MustLive 2010-2014
-Last update: 26.04.2014
+Last update: 23.10.2014
 http://websecurity.com.ua
-Program summary
 
 DAVOSET - it is console (command line) tool for conducting DDoS attacks on the sites via Abuse of Functionality and XML External Entities vulnerabilities at other sites.
 
