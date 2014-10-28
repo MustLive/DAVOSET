@@ -1,14 +1,14 @@
 # DDoS attacks via other sites execution tool
-# DAVOSET v.1.2
+# DAVOSET v.1.2.1
 # Tool for conducting of DDoS attacks on the sites via other sites
 # Copyright (C) MustLive 2010-2014
-# Last update: 26.04.2014
+# Last update: 23.10.2014
 # http://websecurity.com.ua
 #############################################
 # Program summary
 #############################################
 
-DAVOSET - it is console (command line) tool for conducting DDoS attacks on the sites via Abuse of Functionality vulnerabilities at other sites.
+DAVOSET - it is console (command line) tool for conducting DDoS attacks on the sites via Abuse of Functionality and XML External Entities vulnerabilities at other sites.
 
 About such attacks you can read in my article "Using of the sites for attacks on other sites" (http://websecurity.com.ua/4322/).
 
@@ -88,6 +88,7 @@ http://site/script?url=
 http://site/script?url=;GET
 http://site/script;POST;file-with-POST.txt
 http://site/script;XML;file-with-XML.txt
+http://site/script;WP;file-for-WordPress.txt
 http://site/script?url=;BYPASS
 
 The first parameter is URL of the zombie, the second parameter is request method (in case of GET method it can be skipped) and the third parameter is file with POST parameters (in case of GET method it can be skipped).
@@ -100,11 +101,19 @@ The parameter (url in this case), in which URL of the site for attack is setting
 
 In case of XML method the format of file with XML is present in the file XML.txt. Which can be used by default for such attacks.
 
+In case of WP method the format of file with XML for WordPress is present in the file WordPress.txt. Which can be used by default for such attacks.
+
 In case of BYPASS method it is possible to bypass protection of web application, if it's turned on. I.e. domain restriction in Google Maps plugin for Joomla.
 
 #############################################
 # Versions history
 #############################################
+
+23.10.2014 v.1.2.1
+
+Added support of attacks via WordPress (based on XML support since v.1.1.2).
+Added new services into both lists of zombies.
+Removed non-working services from lists of zombies.
 
 26.04.2014 v.1.2
 
