@@ -1,8 +1,8 @@
 # DDoS attacks via other sites execution tool
-# DAVOSET v.1.2.1
+# DAVOSET v.1.2.2
 # Tool for conducting of DDoS attacks on the sites via other sites
 # Copyright (C) MustLive 2010-2014
-# Last update: 23.10.2014
+# Last update: 31.10.2014
 # http://websecurity.com.ua
 #############################################
 # Program summary
@@ -108,6 +108,12 @@ In case of BYPASS method it is possible to bypass protection of web application,
 #############################################
 # Versions history
 #############################################
+
+31.10.2014 v.1.2.2
+
+Added support of https URL for target sites.
+Changed default settings.
+Removed non-working services from full list of zombies.
 
 23.10.2014 v.1.2.1
 
