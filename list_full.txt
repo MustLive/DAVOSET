@@ -26,13 +26,7 @@ http://www.translate.ru/url/translation.aspx?direction=er&sourceURL=
 http://about42.nl/www/showheaders.php;POST;about42.nl.txt
 http://browsershots.org;POST;browsershots.org.txt
 http://streamitwebseries.twww.tv/proxy.php?url=
-http://www.comicgeekspeak.com/proxy.php?url=
-http://67.20.105.143/bitess/plugins/content/plugin_googlemap2_proxy.php?url=
 http://bemaxjavea.com/javea-rentals-alquileres/plugins/content/plugin_googlemap2_proxy.php?url=
-http://centrobrico.net/plugins/content/plugin_googlemap2_proxy.php?url=
-http://conodeluz.org/magnanet/plugins/content/plugin_googlemap2_proxy.php?url=
-http://greenappledentaldt.com/home/templates/plugins/content/plugin_googlemap2_proxy.php?url=
-http://html.strost.ch/dgi/plugins/content/plugin_googlemap2_proxy.php?url=
 http://kobbeleia.net/joomla/plugins/content/plugin_googlemap2_proxy.php?url=
 http://krd-medway.co.uk/site/plugins/content/plugin_googlemap2_proxy.php?url=
 http://minterne.co.uk/mjs/plugins/content/plugin_googlemap2_proxy.php?url=
@@ -46,9 +40,6 @@ http://www.cbcstittsville.com/home/plugins/content/plugin_googlemap2_proxy.php?u
 http://www.ciutatdeivissa.org/portal/plugins/content/plugin_googlemap2_proxy.php?url=
 http://www.contrau.com.br/web/plugins/content/plugin_googlemap2_proxy.php?url=
 http://www.dierenhotelspaubeek.nl/plugins/content/plugin_googlemap2_proxy.php?url=
-http://www.gaston-schul.nl/DU/plugins/content/plugin_googlemap2_proxy.php?url=
-http://www.gaston-schul.nl/FR/plugins/content/plugin_googlemap2_proxy.php?url=
-http://www.gillinghamgurdwara.co.uk/site/plugins/content/plugin_googlemap2_proxy.php?url=
 http://www.gilmeuble.ch/cms/plugins/content/plugin_googlemap2_proxy.php?url=
 http://www.hortonmccormick.com/cms/plugins/content/plugin_googlemap2_proxy.php?url=
 http://www.kanzlei-berendes.de/homepage/plugins/content/plugin_googlemap2_proxy.php?url=
@@ -57,7 +48,6 @@ http://www.lacasaencarilo.com.ar/sitio/plugins/content/plugin_googlemap2_proxy.p
 http://www.losaromos-spa.com.ar/cms/plugins/content/plugin_googlemap2_proxy.php?url=
 http://www.losaromos-spa.com.ar/~losaromo/cms/plugins/content/plugin_googlemap2_proxy.php?url=
 http://www.nickclift.co.uk/web/plugins/content/plugin_googlemap2_proxy.php?url=
-http://www.palagini.it/palagini/plugins/content/plugin_googlemap2_proxy.php?url=
 http://www.parsifaldisco.com/joomla/plugins/content/plugin_googlemap2_proxy.php?url=
 http://www.podosys.com/csm/plugins/content/plugin_googlemap2_proxy.php?url=
 http://www.renault-windisch.de/cms/plugins/content/plugin_googlemap2_proxy.php?url=
@@ -168,3 +158,8 @@ http://lab.univ-batna.dz/lea/plugins/system/plugin_googlemap2_proxy.php?url=
 http://www.computerpoint3.it/cp3/plugins/system/plugin_googlemap2/plugin_googlemap2_proxy.php?url=
 http://hotel-veles.com/plugins/content/plugin_googlemap2_proxy.php?url=
 http://klaassienatuinstra.nl/plugins/content/plugin_googlemap2_proxy.php?url=
+http://qa-dev.w3.org/unicorn/check?ucn_task=conformance&ucn_uri=
+http://www.demarcation.org.za/plugins/system/plugin_googlemap3/plugin_googlemap3_proxy.php?url=
+http://tv1861.net/plugins/system/plugin_googlemap3/plugin_googlemap3_proxy.php?url=
+http://www.idace.ce.gov.br/sitio/plugins/system/plugin_googlemap2_proxy.php?url=
+http://ncs3.prohost.pl/ESTO/plugins/system/plugin_googlemap2/plugin_googlemap2_proxy.php?url=
