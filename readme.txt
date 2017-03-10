@@ -1,8 +1,8 @@
 # DDoS attacks via other sites execution tool
-# DAVOSET v.1.2.9
+# DAVOSET v.1.3
 # Tool for conducting of DDoS attacks on the sites via other sites
-# Copyright (C) MustLive 2010-2016
-# Last update: 30.11.2016
+# Copyright (C) MustLive 2010-2017
+# Last update: 09.03.2017
 # http://websecurity.com.ua
 #############################################
 # Program summary
@@ -88,7 +88,7 @@ http://site/script?url=
 http://site/script?url=;GET
 http://site/script;POST;file-with-POST.txt
 http://site/script;XML;file-with-XML.txt
-http://site/script;WP;file-for-WordPress.txt
+http://site;WP;file-for-WordPress.txt
 http://site/script?url=;BYPASS
 
 The first parameter is URL of the zombie, the second parameter is request method (in case of GET method it can be skipped) and the third parameter is file with POST parameters (in case of GET method it can be skipped).
@@ -108,6 +108,12 @@ In case of BYPASS method it is possible to bypass protection of web application,
 #############################################
 # Versions history
 #############################################
+
+09.03.2017 v.1.3
+
+Extended support of SSRF and added XXE vulnerability in SAP NetWeaver AS.
+Added new services into full list of zombies.
+Removed non-working service from full list of zombies.
 
 30.11.2016 v.1.2.9
 
