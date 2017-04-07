@@ -1,8 +1,8 @@
 # DDoS attacks via other sites execution tool
-# DAVOSET v.1.3
+# DAVOSET v.1.3.1
 # Tool for conducting of DDoS attacks on the sites via other sites
 # Copyright (C) MustLive 2010-2017
-# Last update: 09.03.2017
+# Last update: 04.04.2017
 # http://websecurity.com.ua
 #############################################
 # Program summary
@@ -109,11 +109,17 @@ In case of BYPASS method it is possible to bypass protection of web application,
 # Versions history
 #############################################
 
+04.04.2017 v.1.3.1
+
+Added security bypass by using cookies at appropriate sites.
+Added new services into lists of zombies.
+Removed non-working services from lists of zombies.
+
 09.03.2017 v.1.3
 
 Extended support of SSRF and added XXE vulnerability in SAP NetWeaver AS.
 Added new services into full list of zombies.
-Removed non-working service from full list of zombies.
+Removed non-working services from full list of zombies.
 
 30.11.2016 v.1.2.9
 
