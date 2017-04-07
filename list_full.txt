@@ -56,11 +56,6 @@ http://translate.yandex.ru/translate?srv=yasearch&lang=ru-uk&url=
 http://translate.yandex.ua/translate?srv=yasearch&lang=ru-uk&url=
 http://translate.yandex.net/tr-url/ru-uk.uk/
 http://es.laresmadrid.org/plugins/system/plugin_googlemap3/plugin_googlemap3_proxy.php?url=
-http://doleorganic.com/plugins/content/plugin_googlemap2_proxy.php?url=
-http://www.aculaval.com/joomla/plugins/system/plugin_googlemap2_proxy.php?url=
-http://www.dbaa.co.za/plugins/system/plugin_googlemap3/plugin_googlemap3_proxy.php?url=
-http://www.astecdisseny.com/plugins/content/plugin_googlemap2_proxy.php?url=
-http://www.fillmorefairways.com/plugins/content/plugin_googlemap2_proxy.php?url=
 http://www.bus-reichert.eu/plugins/system/plugin_googlemap2/plugin_googlemap2_proxy.php?url=
 http://bbtoma.com/plugins/content/plugin_googlemap2_proxy.php?url=
 http://www.tajmahalrestaurant.co.za/plugins/system/plugin_googlemap2/plugin_googlemap2_proxy.php?url=
@@ -129,13 +124,15 @@ http://bao-sushi.com/plugins/system/plugin_googlemap2/plugin_googlemap2_proxy.ph
 http://www.limitless-coiffure.com/plugins/system/plugin_googlemap2_proxy.php?url=
 http://finnrelax.hu/fitnesz/plugins/system/plugin_googlemap2/plugin_googlemap2_proxy.php?url=
 http://hotelsixty3.com/plugins/system/plugin_googlemap2_proxy.php?url=
+# XXE Injection via POST:
+# http://site/script;XML;XML.txt
+# AoF (SSRF) vulnerability in WordPress
+# http://site;WP;WordPress.txt
 http://screenshot.com.ua/makeit.cgi;POST;about42.nl.txt
 http://www.dimensionebimbi.it/DB/plugins/content/plugin_googlemap2_proxy.php?url=
 http://www.molineroava.com/en/plugins/system/plugin_googlemap2_proxy.php?url=
 http://adeptlock.com/plugins/system/plugin_googlemap2/plugin_googlemap2_proxy.php?url=
 http://voda.dn.ua/plugins/system/plugin_googlemap2/plugin_googlemap2_proxy.php?url=
-# XXE Injection via POST:
-# http://site/script;XML;XML.txt
 # XXE Injection in NetIQ Access:
 # https://site:8443/nps/servlet/webacc?taskId=fw.PreviewObjectFilter&nextState=initialState&merge=fw.TCPreviewFilter&query=<!DOCTYPE+x+[%0a<!ENTITY+xxe+SYSTEM+"http://site">%0a]><query><container>%26xxe%3b</container><subclasses>false</subclasses></query>
 # XXE Injection in GeoServer: Take value of !C! from http://site/wfs?request=GetCapabilities
@@ -176,8 +173,6 @@ http://eskimon.fr/wp-content/plugins/filedownload/download.php?path=
 http://www.robolift.at/wp-content/plugins/filedownload/download.php?path=
 http://www.darioianes.it/site/wp-content/plugins/filedownload/download.php?path=
 http://www.zetatekindia.com/wp-content/plugins/filedownload/download.php?path=
-# AoF (SSRF) vulnerability in WordPress
-# http://site;WP;WordPress.txt
 # XXE Injection in SAP NetWeaver AS Java
 # http://site/_tc~monitoring~webservice~web/ServerNodesWSService;XML;SAP NetWeaver.txt
 http://www.proxy2016.top/index.php?q=
@@ -195,3 +190,18 @@ http://cathygnarchdiocese.org/wp-content/plugins/filedownload/download.php?path=
 http://dundalktidytowns.com/wp-content/plugins/filedownload/download.php?path=
 http://bh.kbs6.de/wp-content/plugins/filedownload/download.php?path=
 http://conference-research.com/wp-content/plugins/filedownload/download.php?path=
+http://ghostproxy.eu/browse.php?u=
+http://yavz.xyz/b.php?u=
+http://iwaz.gq/browse.php?u=
+http://shinyproxy.com/browse.php?u=
+http://bypasstool.gq/browse.php?u=
+http://blackjacklive.de/wp-content/plugins/filedownload/download.php?path=
+http://buehler-hartmetall.de/BuehlerHartmetallEX/wp-content/plugins/filedownload/download.php?path=
+http://audytpavlenko.com.ua/wp-content/plugins/filedownload/download.php?path=
+http://talevtechnology.com/bg/wp-content/plugins/filedownload/download.php?path=
+http://drlindaskincare.com/wp-content/plugins/filedownload/download.php?path=
+http://cadmm.org/wp-content/plugins/filedownload/download.php?path=
+http://decktours.de/portal/content/wp-content/plugins/filedownload/download.php?path=
+http://psychotherapie-dr-maeng.de/wp-content/plugins/filedownload/download.php?path=
+http://diskont.at/wp-content/plugins/filedownload/download.php?path=
+http://parador-online.de/wp-content/plugins/filedownload/download.php?path=
