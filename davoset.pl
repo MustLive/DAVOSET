@@ -1,13 +1,13 @@
 #!/usr/bin/perl
 # DDoS attacks via other sites execution tool
-# DAVOSET v.1.3.1
+# DAVOSET v.1.3.2
 # Tool for conducting of DDoS attacks on the sites via other sites
 # Copyright (C) MustLive 2010-2017
-# Last update: 04.04.2017
+# Last update: 20.04.2017
 # http://websecurity.com.ua
 #############################################
 # Settings
-my $version = "1.3.1"; # program version
+my $version = "1.3.2"; # program version
 my $agent = "Mozilla/5.0 (compatible; MSIE 8.0; Windows NT 5.1)"; # user agent
 my $default_port = "80"; # default port of the host
 my $show_stat = 1; # show statistic of work
