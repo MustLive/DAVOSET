@@ -65,16 +65,12 @@ http://stockbridgetownhall.co.uk/plugins/content/plugin_googlemap2_proxy.php?url
 http://mentzerrepairs.com/plugins/system/plugin_googlemap2_proxy.php?url=
 http://toddlers.nalanda.edu.in/plugins/system/plugin_googlemap3/plugin_googlemap3_proxy.php?url=
 http://cultura-city.rv.ua/plugins/system/plugin_googlemap3_proxy.php?url=
-http://bike-electric.co.uk/plugins/system/plugin_googlemap3/plugin_googlemap3_proxy.php?url=
 http://agenzia-anna.com/plugins/system/plugin_googlemap2/plugin_googlemap2_proxy.php?url=
-http://www.gretnadrug.com/plugins/system/plugin_googlemap2_proxy.php?url=
 http://www.crestwoodpediatric.com/plugins/system/plugin_googlemap2/plugin_googlemap2_proxy.php?url=
 http://www.oceans-wien.com/plugins/system/plugin_googlemap2_proxy.php?url=;BYPASS
 http://lavori.joomlaskin.it/italyhotels/wp-content/plugins/js-multihotel/includes/show_image.php?w=1&h=1&file=
-http://santaclaradelmar.com/hoteles/wp-content/plugins/js-multihotel/includes/show_image.php?w=1&h=1&file=
 http://www.authentic-luxe-locations.com/wp-content/plugins/js-multihotel/includes/show_image.php?w=1&h=1&file=
 http://www.keenecinemas.com/plugins/system/plugin_googlemap2/plugin_googlemap2_proxy.php?url=
-http://www.hotelmonyoli.com/plugins/system/plugin_googlemap2/plugin_googlemap2_proxy.php?url=
 http://prosperitydrug.com/plugins/content/plugin_googlemap2_proxy.php?url=
 http://policlinicamonteabraao.com/plugins/content/plugin_googlemap2_proxy.php?url=
 http://www.vetreriafasanese.com/plugins/system/plugin_googlemap2_proxy.php?url=
@@ -180,7 +176,6 @@ http://www.proxy2017.top/index.php?q=
 http://ntc-convention.com.ua/wp-content/plugins/filedownload/download.php?path=
 http://tikoblog.de/wp-content/plugins/filedownload/download.php?path=
 http://i4ultimate.com/wp-content/plugins/filedownload/download.php?path=
-http://purpleinfinity.co.za/wp-content/plugins/filedownload/download.php?path=
 http://nets.16mb.com/wp-content/plugins/filedownload/download.php?path=
 http://phidiastavern.com/wp-content/plugins/filedownload/download.php?path=
 http://noorussabahresidency.com/wp-content/plugins/filedownload/download.php?path=
@@ -205,8 +200,20 @@ http://decktours.de/portal/content/wp-content/plugins/filedownload/download.php?
 http://psychotherapie-dr-maeng.de/wp-content/plugins/filedownload/download.php?path=
 http://diskont.at/wp-content/plugins/filedownload/download.php?path=
 http://parador-online.de/wp-content/plugins/filedownload/download.php?path=
+# XXE Injection in CyberPower Systems PowerPanel
+# http://site/client/ppbe.xml;XML;CyberPower.txt
 https://kub-berlin.org/formularprojekt/wp-content/plugins/filedownload/download.php?path=
 http://portraits-hellerau.com/wp-content/plugins/filedownload/download.php?path=
 http://previdea.it/wordpress/wp-content/plugins/filedownload/download.php?path=
 http://jah-zg.ch/wp-content/plugins/filedownload/download.php?path=
 http://gbp.zakrzowek.gmina.pl/wp-content/plugins/filedownload/download.php?path=
+http://vdl-web.de/wp-content/plugins/filedownload/download.php?path=
+http://youtuber-relations.de/wp-content/plugins/filedownload/download.php?path=
+http://waldzeit.ch/wp-content/plugins/filedownload/download.php?path=
+http://fishmed.iimcb.gov.pl/wp-content/plugins/filedownload/download.php?path=
+http://coubeche.com/wp-content/plugins/filedownload/download.php?path=
+http://fitnesspassie.nl/wp-content/plugins/filedownload/download.php?path=
+http://3dportal.nl/wp-content/plugins/filedownload/download.php?path=
+http://ferienzauber.net/wp-content/plugins/filedownload/download.php?path=
+http://dpsg-abbas.de/wp-content/plugins/filedownload/download.php?path=
+http://gesundheitstreff-tuwas.de/wp-content/plugins/filedownload/download.php?path=
