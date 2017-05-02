@@ -217,3 +217,8 @@ http://3dportal.nl/wp-content/plugins/filedownload/download.php?path=
 http://ferienzauber.net/wp-content/plugins/filedownload/download.php?path=
 http://dpsg-abbas.de/wp-content/plugins/filedownload/download.php?path=
 http://gesundheitstreff-tuwas.de/wp-content/plugins/filedownload/download.php?path=
+http://plombieres-les-bains.com/wp-content/plugins/js-multihotel/includes/show_image.php?w=1&h=1&file=
+http://beta.zanzibarportfolio.com/wp-content/plugins/js-multihotel/includes/show_image.php?w=1&h=1&file=
+http://materialesdeconstruccionmadrid.es/wp-content/plugins/filedownload/download.php?path=
+http://le-maitre-refleur.scifo.fr/wp-content/plugins/filedownload/download.php?path=
+http://dr.spitzbart.com/wp-content/plugins/filedownload/download.php?path=
