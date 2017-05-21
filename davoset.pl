@@ -1,13 +1,13 @@
 #!/usr/bin/perl
 # DDoS attacks via other sites execution tool
-# DAVOSET v.1.3.2
+# DAVOSET v.1.3.3
 # Tool for conducting of DDoS attacks on the sites via other sites
 # Copyright (C) MustLive 2010-2017
-# Last update: 20.04.2017
+# Last update: 20.05.2017
 # http://websecurity.com.ua
 #############################################
 # Settings
-my $version = "1.3.2"; # program version
+my $version = "1.3.3"; # program version
 my $agent = "Mozilla/5.0 (compatible; MSIE 8.0; Windows NT 5.1)"; # user agent
 my $default_port = "80"; # default port of the host
 my $show_stat = 1; # show statistic of work
@@ -20,9 +20,13 @@ my $max_cycles = "1000"; # maximum number of cycles in cyclic mode
 my $log = 1; # 0 - turn off, 1 - turn on logging
 my $log_file = "logs.txt"; # log with results of work
 my $cache = 0; # cache bypass
-my $proxy = 0; # 0 - no proxy, 1 - Socks proxy
+my $proxy = 0; # 0 - no proxy, 1 - Socks proxy, 2 - Tor
 my $proxyserver = ""; # Socks server
 my $proxyport = "1080"; # Socks port
+if ($proxy == 2) { # for Tor
+	$proxyserver = "127.0.0.1";
+	$proxyport = "9051";
+}
 #############################################
 use IO::Socket;
 use IO::Socket::Socks;
