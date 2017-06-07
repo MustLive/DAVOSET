@@ -227,3 +227,6 @@ http://im.ufrj.br/~maurizio.monge/kanjax/proxy.php?url=
 https://geecon.ru/proxy.php?url=
 https://netroomz.com.au/hotel/gmap-proxy.aspx?path=gmap-proxy.aspx&url=
 http://theill.com/library/proxy.asp?url=
+https://i1.wp.com/
+https://i2.wp.com/
+https://i3.wp.com/
