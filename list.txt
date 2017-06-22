@@ -10,11 +10,11 @@ http://validator.w3.org/checklink?uri=
 http://www.w3.org/RDF/Validator/ARPServlet?URI=
 http://www.w3.org/2005/08/online_xslt/xslt?xmlfile=http://www.w3.org&xslfile=
 http://validator.w3.org/mobile/check?docAddr=
-http://online.htmlvalidator.com/php/onlinevallite.php?url=
 http://feedvalidator.org/check.cgi?url=
 http://www.cynthiasays.com/mynewtester/cynthia.exe?rptmode=-1&url1=
 http://www.watchmouse.com/en/checkit.php?c=jpcheckit&vurl=
-http://www.onlinewebcheck.com/check.php?url=
 http://www.online-translator.com/url/translation.aspx?direction=er&sourceURL=
 http://www.translate.ru/url/translation.aspx?direction=er&sourceURL=
 http://about42.nl/www/showheaders.php;POST;about42.nl.txt
+http://streamitwebseries.twww.tv/proxy.php?url=
+http://web-sniffer.net/?url=
