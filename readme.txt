@@ -1,8 +1,8 @@
 # DDoS attacks via other sites execution tool
-# DAVOSET v.1.3.4
+# DAVOSET v.1.3.5
 # Tool for conducting of DDoS attacks on the sites via other sites
 # Copyright (C) MustLive 2010-2017
-# Last update: 22.06.2017
+# Last update: 25.07.2017
 # http://websecurity.com.ua
 #############################################
 # Program summary
@@ -48,11 +48,23 @@ Or from command line:
 
 perl davoset.pl u=http://site
 
+To set cyclic mode:
+
 perl davoset.pl u=http://site l=list.txt m=1 c=100
 
 To explicitly set logging:
 
 perl davoset.pl u=http://site l=list.txt log=1
+
+DAVOSET uses other sites as a proxy, but you can additionally use proxy.
+
+To use Socks proxy:
+
+perl davoset.pl u=http://site l=list.txt p=1
+
+To use Tor:
+
+perl davoset.pl u=http://site l=list.txt p=2
 
 #############################################
 # Testing of the botnet
@@ -108,6 +120,12 @@ In case of BYPASS method it is possible to bypass protection of web application,
 #############################################
 # Versions history
 #############################################
+
+25.07.2017 v.1.3.5
+
+Added new services into full list of zombies.
+Added command line argument for proxy.
+Changed default settings.
 
 22.06.2017 v.1.3.4
 
