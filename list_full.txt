@@ -229,3 +229,13 @@ https://i2.wp.com/
 https://i3.wp.com/
 http://mundoprimaria.com/wp-content/plugins/descargas-email/descargar.php?url=
 http://ccam-va.com/wp-content/plugins/rss-reader-widget/feed.php?url=
+https://docs.google.com/viewer?url=
+http://finpl.gov.ua/plugins/system/plugin_googlemap2_proxy.php?url=
+http://gr8.com.ua/plugins/content/plugin_googlemap2_proxy.php?url=
+https://vetif.gov.ua/plugins/system/plugin_googlemap2/plugin_googlemap2_proxy.php?url=
+http://les-belles-echappees.com/plugins/content/plugin_googlemap2_proxy.php?url=
+http://dosuccess.com.mx/dos/plugins/system/plugin_googlemap2/plugin_googlemap2_proxy.php?url=
+http://www.tupelorecycling.com/plugins/system/plugin_googlemap2/plugin_googlemap2_proxy.php?url=
+http://koniewo.eu/plugins/system/plugin_googlemap2/plugin_googlemap2_proxy.php?url=
+http://blauwwit-roosendaal.nl/badminton/plugins/content/plugin_googlemap2_proxy.php?url=
+http://cistiace-sluzby.sk/plugins/system/plugin_googlemap3/plugin_googlemap3_proxy.php?url=
