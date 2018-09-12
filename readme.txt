@@ -1,8 +1,8 @@
 # DDoS attacks via other sites execution tool
-# DAVOSET v.1.3.5
+# DAVOSET v.1.3.6
 # Tool for conducting of DDoS attacks on the sites via other sites
-# Copyright (C) MustLive 2010-2017
-# Last update: 25.07.2017
+# Copyright (C) MustLive 2010-2018
+# Last update: 31.08.2018
 # http://websecurity.com.ua
 #############################################
 # Program summary
@@ -120,6 +120,12 @@ In case of BYPASS method it is possible to bypass protection of web application,
 #############################################
 # Versions history
 #############################################
+
+31.08.2018 v.1.3.6
+
+Added support of SSRF vulnerability in Splunk Enterprise.
+Added new services into lists of zombies.
+Removed non-working services from lists of zombies.
 
 25.07.2017 v.1.3.5
 
