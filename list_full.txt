@@ -2,17 +2,13 @@
 http://regex.info/exif.cgi?url=
 http://anonymouse.org/cgi-bin/anon-www.cgi/
 http://www.google.com/translate?u=
-http://validator.w3.org/feed/check.cgi?url=
-http://translate.google.com/translate?u=
-http://www.w3.org/2001/03/webdata/xsv?style=xsl&docAddrs=
 http://validator.w3.org/check?uri=
-http://jigsaw.w3.org/css-validator/validator?uri=
-http://validator.w3.org/checklink?uri=
-http://www.w3.org/RDF/Validator/ARPServlet?URI=
+http://translate.google.com/translate?u=
+#http://jigsaw.w3.org/css-validator/validator?uri=
+#http://validator.w3.org/checklink?uri=
+#http://www.w3.org/RDF/Validator/ARPServlet?URI=
 http://www.w3.org/2005/08/online_xslt/xslt?xslfile=http%3A%2F%2Fwww.w3.org%2F2002%2F08%2Fextract-semantic.xsl&xmlfile=
 http://www.w3.org/2005/08/online_xslt/xslt?xmlfile=http://www.w3.org&xslfile=
-http://validator.w3.org/mobile/check?docAddr=
-http://validator.w3.org/p3p/20020128/p3p.pl?uri=
 http://feedvalidator.org/check.cgi?url=
 http://www.cynthiasays.com/mynewtester/cynthia.exe?rptmode=-1&url1=
 http://www.watchmouse.com/en/checkit.php?c=jpcheckit&vurl=
@@ -21,7 +17,6 @@ http://www.online-translator.com/url/translation.aspx?direction=er&sourceURL=
 http://www.translate.ru/url/translation.aspx?direction=er&sourceURL=
 http://about42.nl/www/showheaders.php;POST;about42.nl.txt
 http://browsershots.org;POST;browsershots.org.txt
-http://streamitwebseries.twww.tv/proxy.php?url=
 http://bemaxjavea.com/javea-rentals-alquileres/plugins/content/plugin_googlemap2_proxy.php?url=
 http://kobbeleia.net/joomla/plugins/content/plugin_googlemap2_proxy.php?url=
 http://krd-medway.co.uk/site/plugins/content/plugin_googlemap2_proxy.php?url=
@@ -42,20 +37,14 @@ http://www.sounders.es/plugins/content/plugin_googlemap2_proxy.php?url=
 http://www.suelcasa.com/suelcasa/plugins/content/plugin_googlemap2_proxy.php?url=
 http://www.tijssen-staal.nl/site/plugins/content/plugin_googlemap2_proxy.php?url=
 http://www.tus-haltern.de/site/plugins/content/plugin_googlemap2_proxy.php?url=
-http://www.vm-esslingen.de/cms/plugins/content/plugin_googlemap2_proxy.php?url=
-http://www.zahnarzt-buhl.de/praxis/plugins/content/plugin_googlemap2_proxy.php?url=
-http://www.bergenpol.com/cms/plugins/content/plugin_googlemap2_proxy.php?url=
-http://www.spvgg-roedersheim.de/web/plugins/system/plugin_googlemap2/plugin_googlemap2_proxy.php?url=
 http://ping-admin.ru/index.sema;POST;ping-admin.ru.txt
 http://web-sniffer.net/?url=
-http://sova-tour.com.ua/plugins/system/plugin_googlemap2_proxy.php?url=
 http://scu-oldesloe.de/plugins/system/plugin_googlemap3/plugin_googlemap3_proxy.php?url=
 http://translate.yandex.ru/translate?srv=yasearch&lang=ru-uk&url=
 http://translate.yandex.ua/translate?srv=yasearch&lang=ru-uk&url=
 http://translate.yandex.net/tr-url/ru-uk.uk/
 http://es.laresmadrid.org/plugins/system/plugin_googlemap3/plugin_googlemap3_proxy.php?url=
 http://www.bus-reichert.eu/plugins/system/plugin_googlemap2/plugin_googlemap2_proxy.php?url=
-http://bbtoma.com/plugins/content/plugin_googlemap2_proxy.php?url=
 http://www.tajmahalrestaurant.co.za/plugins/system/plugin_googlemap2/plugin_googlemap2_proxy.php?url=
 http://www.yerbabuenacuisine.com/plugins/system/plugin_googlemap2_proxy.php?url=
 http://stockbridgetownhall.co.uk/plugins/content/plugin_googlemap2_proxy.php?url=
@@ -63,7 +52,6 @@ http://mentzerrepairs.com/plugins/system/plugin_googlemap2_proxy.php?url=
 http://toddlers.nalanda.edu.in/plugins/system/plugin_googlemap3/plugin_googlemap3_proxy.php?url=
 http://cultura-city.rv.ua/plugins/system/plugin_googlemap3_proxy.php?url=
 http://agenzia-anna.com/plugins/system/plugin_googlemap2/plugin_googlemap2_proxy.php?url=
-http://www.crestwoodpediatric.com/plugins/system/plugin_googlemap2/plugin_googlemap2_proxy.php?url=
 http://lavori.joomlaskin.it/italyhotels/wp-content/plugins/js-multihotel/includes/show_image.php?w=1&h=1&file=
 http://www.authentic-luxe-locations.com/wp-content/plugins/js-multihotel/includes/show_image.php?w=1&h=1&file=
 http://www.keenecinemas.com/plugins/system/plugin_googlemap2/plugin_googlemap2_proxy.php?url=
@@ -239,3 +227,10 @@ http://www.tupelorecycling.com/plugins/system/plugin_googlemap2/plugin_googlemap
 http://koniewo.eu/plugins/system/plugin_googlemap2/plugin_googlemap2_proxy.php?url=
 http://blauwwit-roosendaal.nl/badminton/plugins/content/plugin_googlemap2_proxy.php?url=
 http://cistiace-sluzby.sk/plugins/system/plugin_googlemap3/plugin_googlemap3_proxy.php?url=
+# SSRF in Splunk Enterprise
+# http://site/en-US/alerts/launcher?eai%3Aacl.app=launcher&eai%3Aacl.owner=*&severity=*&search=1&alerts_id=
+http://pokl.up.gov.pl/plugins/system/plugin_googlemap2_proxy.php?url=
+http://centrumzorza.pl/hotel//plugins/content/plugin_googlemap2_proxy.php?url=
+http://swpl.org/plugins/content/plugin_googlemap2_proxy.php?url=
+http://www.mmadvocatuur.nl/plugins/system/plugin_googlemap2/plugin_googlemap2_proxy.php?url=
+http://coopcarlet.com/plugins/system/plugin_googlemap2/plugin_googlemap2_proxy.php?url=
