@@ -1,8 +1,8 @@
 # DDoS attacks via other sites execution tool
-# DAVOSET v.1.3.6
+# DAVOSET v.1.3.7
 # Tool for conducting of DDoS attacks on the sites via other sites
 # Copyright (C) MustLive 2010-2018
-# Last update: 31.08.2018
+# Last update: 17.12.2018
 # http://websecurity.com.ua
 #############################################
 # Program summary
@@ -67,7 +67,7 @@ To use Tor:
 perl davoset.pl u=http://site l=list.txt p=2
 
 #############################################
-# Testing of the botnet
+# Testing the botnet
 #############################################
 
 1. Start the program:
@@ -78,7 +78,7 @@ davoset.pl
 
 Site: test
 
-3. Get the results of testing of list of zombie-servers in the botnet.
+3. Get the results of testing a list of zombie-servers in the botnet.
 
 Or from command line:
 
@@ -120,6 +120,14 @@ In case of BYPASS method it is possible to bypass protection of web application,
 #############################################
 # Versions history
 #############################################
+
+17.12.2018 v.1.3.7
+
+Added verbose mode.
+Added SSRF in Microsoft Forefront Unified Access Gateway 2010.
+Added new services into full list of zombies.
+Changed default settings.
+Removed non-working services from full list of zombies.
 
 31.08.2018 v.1.3.6
 
@@ -305,7 +313,7 @@ Made program to not close at connection errors.
 
 Added new services into list_full.txt.
 Improved identification of the page at sending request.
-Fixed bug with iterator $i at testing list.
+Fixed bug with iterator at testing a list.
 
 18.07.2010 v.1.0.5
 
@@ -327,7 +335,7 @@ Added support of skipping blank lines in file with list of zombie-servers.
 
 11.07.2010 v.1.0.2
 
-Added function for testing of list of zombie-servers.
+Added function for testing a list of zombie-servers.
 Added Accept and User-Agent headers (for attack and test requests) for compatibility with some servers.
 Added option to set fake User-Agent (for hiding of the attack).
 
